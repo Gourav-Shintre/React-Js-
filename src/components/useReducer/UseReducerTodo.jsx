@@ -1,6 +1,14 @@
 import React, { useReducer, useState } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuid } from "uuid";
+//usereducer returns an array of two elements
+//first element is current state and second element is dispatch function
+//and use reducer accept two parameters(reducer function and initial state) 
+//dispatch function is used to send action to reducer function
+//reducer function takes two parameters (state, action) and returns new state based on action type
+//action is an object which contains type and payload
+//useReducer is used to manage complex state logic in functional components
+//useReducer is used to manage state in a more predictable way than useState
 
 const UseReducerTodo = () => {
   const [todo, setTodo] = useState("");

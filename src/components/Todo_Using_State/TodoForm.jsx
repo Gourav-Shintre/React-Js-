@@ -56,7 +56,8 @@ const TodoForm = () => {
       <button onClick={handleSubmit} disabled={todo.trim().length === 0}>
         Add
       </button>
-      <TodoList
+      <TodoLi
+      st
         todos={todos}
         handleDelete={handleDelete}
         handleStatus={handleStatus}

@@ -2,3 +2,16 @@ body {
   margin: 0;
  background-color: rgb(65, 63, 63);
 }
+a{
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: underline;
+  }
+  &:active{
+    color: black;
+  }
+}
+.isActive{
+  color: gray;
+}

@@ -1,5 +1,7 @@
 import Greetings from "./components/Greetings";
 import Examplememo from "./components/reactMemo/Examplememo";
+import Home from "./components/router/Home";
+import Routing from "./components/router/Routing";
 import StateExample from "./components/State_Handling/StateExample";
 import First from "./components/State_Handling/StateExample";
 import StateExample2 from "./components/State_Handling/StateExample2";
@@ -13,7 +15,11 @@ import UseMemoEx from "./components/useMemo/UseMemoEx";
 import UseReducer from "./components/useReducer/UseReducer";
 import UseReducerTodo from "./components/useReducer/UseReducerTodo";
 import UseRef from "./components/useRef/useRef";
-
+import { Routes, Route } from "react-router-dom";
+import AdminLayout from "./Layout/AdminLayout";
+import Contact from "./components/router/Contact";
+import Posts from "./components/router/Posts";
+import PostView from "./components/router/PostView";
 function App() {
   return (
     <>
@@ -50,7 +56,18 @@ function App() {
       {/* <Ex2 /> */}
 
       {/* usecall back */}
-      <ExCallBack />
+      {/* <ExCallBack /> */}
+      <Routes>
+        <Route path="/" element={<AdminLayout />}>
+          <Route path="/route" element={<Routing />} />
+          <Route index element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+          <Route path="/posts" element={<AdminLayout />}>
+          <Route index element={<Posts/>}/>
+            <Route path=":id" element={<PostView />} />
+          </Route>
+      </Routes>
     </>
   );
 }
